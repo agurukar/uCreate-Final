@@ -1,4 +1,4 @@
-# Developer Manual
+# Developers' Manual
 
 ### File Structure
 
