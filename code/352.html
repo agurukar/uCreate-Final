@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Schedule Builder</title>
+
+    <style>
+
+      header {
+          background-color: #B10D00;
+          padding-top: 30px;
+          margin: -10px;
+          padding-bottom: 20px;
+      }
+
+      #title {
+          background-color: #B10D00;
+          color: white;
+          padding-left: 30px;
+          font-size: 30px;
+          font-family: Helvetica, sans-serif;
+          display: inline-block;
+          margin: 0;
+      }
+
+      img {
+        padding-left: 20px;
+      }
+
+      .contact {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .schedules {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .home {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .testudo {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .log_out {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .home:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .contact:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .schedules:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .log_out:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      a:link {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      p {
+        font-family: Helvetica, sans-serif;
+      }
+
+      #term {
+        font-size: 25px;
+        padding-top: 10px;
+        padding-left: 12px;
+        color: #4D4D4D;
+      }
+
+      /* table */
+      #schedule_maker, th, td {
+          border: 1px solid #C6C2C2;
+          border-collapse: collapse;
+          font-family: Helvetica, sans-serif;
+          table-layout: fixed;
+          color: #4D4D4D;
+          margin-left: 13px;
+          width: 90%;
+      }
+
+      th, td {
+          padding: 20px;
+          text-align: center;
+      }
+
+      .alignleft {
+	       float: left;
+         font-size: 25px;
+         padding-top: 10px;
+         padding-left: 12px;
+         color: #4D4D4D;
+       }
+
+       .alignright {
+	        float: right;
+          width: 49%;
+          font-family: Helvetica, sans-serif;
+          color: #4D4D4D;
+          padding-top: 60px;
+       }
+
+       #umd {
+         width: 15%;
+         position: absolute;
+       }
+
+       .column {
+           float: left;
+           padding: 10px;
+        }
+
+       .left {
+         float: left;
+         width: 60%;
+       }
+
+       .right {
+         float: right;
+         width: 40%;
+       }
+
+       .row:after {
+         content: "";
+         display: table;
+         clear: both;
+       }
+
+       .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+  }
+
+  #myInput {
+    border-box: box-sizing;
+    outline: 3px solid #DCDCDC;
+    background-image: url("http://assets.stickpng.com/thumbs/585e4ae1cb11b227491c3393.png");
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 500px;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    width: 563px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    overflow: auto;
+    height: 300px;
+}
+
+.dropdown-content a {
+    font-family: Helvetica, sans-serif;
+    color: #4D4D4D;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 50%;
+}
+
+.disabled {
+  opacity: 0.6;
+  background-color: #A9A9A9;
+  cursor: not-allowed;
+}
+
+#classes {
+    border: 1px solid #C6C2C2;
+    border-collapse: collapse;
+    font-family: Helvetica, sans-serif;
+    table-layout: fixed;
+    color: #4D4D4D;
+    width: 569px;
+}
+
+th, td {
+    padding: 20px;
+    text-align: center;
+}
+
+#time {
+  color: #4D4D4D;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+        <p id = "title"><a href = "home.html">uCREATE</a></p>
+        <button class="log_out"><a href = "login.html">Log Out</a></button>
+        <button class="contact"><a href="mailto:ucreate@support.com">Contact Us</a></button>
+        <button class="schedules">Your Schedules</button>
+        <button class="testudo"><a href="http://www.testudo.umd.edu/">Testudo</a></button>
+        <button class="home"><a href = "home.html">Home</a></button>
+        <img src="gradient.svg" alt="gradient" width = "100%">
+    </header>
+
+    <div id="textbox">
+      <p class="alignleft">Spring 2019<br><b>Primary Schedule</p>
+      <p class="alignright">3 Credits</p>
+    </div>
+    <div style="clear: both;"></div>
+
+
+
+      <!-- Schedule table -->
+    <div class="row">
+      <div class = "left">
+      <table id = "schedule_maker">
+        <tr>
+          <td></td>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+        <tr>
+          <td>8:00 AM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>9:00 AM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10:00 AM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>11:00 AM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>12:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>1:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>5:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>6:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>8:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>9:00 PM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+    </table>
+  </div>
+    <div class = "right">
+      <form action="/action_page.php">
+        <p id = "select_sem" style = "font-size: 20px; font-family: Helvetica, sans-serif;
+        color: #4D4D4D; ">Select a semester</p>
+        <select name="semesters">
+          <option value="spring">Spring 2019</option>
+          <option value="fall">Fall 2019</option>
+          <option value="next_spring">Spring 2020</option>
+          <option value="next_fall">Fall 2020</option>
+        </select><br><br>
+
+        <p id = "select_sem" style = "font-size: 20px; font-family: Helvetica, sans-serif;
+        color: #4D4D4D; ">Select a course</p>
+        <div class="dropdown">
+          <input type="text" id="myInput" onkeyup="myFunction()" autocomplete="off">
+          <div id="myDropdown" class="dropdown-content">
+            <a href="126.html">INST126: Introduction to Programming for Information Science</a>
+            <a href="201.html">INST201: Introduction to Information Science</a>
+            <a href="311.html">INST311: Information Organization</a>
+            <a href="314.html">INST314: Statistics for Information Science</a>
+            <a href="326.html">INST326: Object-Oriented Programming for Information Science</a>
+            <a href="327.html">INST327: Database Design and Modeling</a>
+            <a href="335.html">INST335: Teams and Organizations</a>
+            <a href="346.html">INST346: Technologies Infrastructure and Architecture </a>
+            <a href="352.html">INST352: Information User Needs and Assessment</a>
+            <a href="354.html">INST354: Decision-Making for Information Science</a>
+            <a href="362.html">INST362: User-Centered Design</a>
+            <a href="377.html">INST377: Dynamic Web Applications</a>
+            <a href="414.html">INST414: Data Science Techniques</a>
+          </div>
+        </div>
+      </form>
+      <br><br>
+      <table id = "classes">
+        <tr>
+          <th style = "background-color: #98FB98; height: 20px; padding: 0px;"</th>
+        </tr>
+        <tr>
+          <th style = "font-weight: normal; padding: 10px;">INST352: Information User Needs and Assessment</th>
+        </tr>
+        <tr>
+          <th style = "text-align: left; padding: 10px;">Lutters, W.</th>
+        </tr>
+        <tr>
+          <th style = "font-weight: normal; padding: 10px;">TuTh 11:00 AM - 12:15 PM
+            &nbsp;&nbsp;&nbsp; ARC 1103
+            &nbsp;&nbsp;&nbsp;&nbsp; 0101
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0/45</th>
+        </tr>
+        <tr>
+          <th style = "text-align: right; font-weight: normal; padding: 10px;">3 credits</th>
+        </tr>
+        <tr>
+          <th style = "text-align: left; padding: 10px;">Instructor TBA.</th>
+        </tr>
+        <tr>
+          <th style = "font-weight: normal; padding: 10px;"><a href = "352_schedule.html" id = "time">Class time/details on ELMS
+            &nbsp;&nbsp;&nbsp; ONLINE
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23/45</a></th>
+        </tr>
+        <tr>
+          <th style = "text-align: right; font-weight: normal; padding: 10px;">3 credits</th>
+        </tr>
+      </table>
+
+
+
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div style = "width: 80%; text-align: center;">
+        <button class="button disabled">Submit Schedule</button>
+        <br>
+        <button class="button">Create an Alternate Schedule</button>
+      </div>
+    </div>
+  </div>
+  <br><br>  <br><br>  <br>
+  <img id = "umd" src="http://assets.gradreports.com/assets/school_logos/u_of_maryland_c_park.png" alt="UMDlogo">
+
+  <!-- Javasript -->
+  <script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("myDropdown");
+      a = div.getElementsByTagName("a");
+      for (i = 0; i < a.length; i++) {
+          if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+          } else {
+              a[i].style.display = "none";
+          }
+      }
+  }
+
+
+
+  </script>
+
+  </body>
+</html>

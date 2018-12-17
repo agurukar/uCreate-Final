@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>uCreate</title>
+
+
+  <style>
+
+  body {
+    font-family: Helvetica, sans-serif;
+  }
+
+  header {
+    background-color: #B10D00;
+    text-align: center;
+    margin: -10px;
+    font-size: 70px;
+    font-family: Helvetica, sans-serif;
+    color: white;
+    padding-top: 70px;
+  }
+
+  #home {
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+    font-size: 110%;
+    padding-left: 400px;
+    padding-right: 400px;
+  }
+
+
+  input[type=text], select {
+      width: 97%;
+      padding: 12px 20px;
+      margin: 10px 0 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+
+  }
+
+  input[type=password], select {
+      width: 97%;
+      padding: 12px 20px;
+      margin: 10px 0 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+  input[type=submit] {
+      width: 40%;
+      background-color: #B10D00;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+      background-color: #DC1A0B;
+  }
+
+  div {
+      border-radius: 5px;
+      padding: 20px;
+      padding-left: 400px;
+      padding-right: 400px;
+  }
+
+  img {
+    width: 15%;
+    position: absolute;
+  }
+
+  #submit {
+    text-align: center;
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <p id = "title">uCREATE</p>
+  </header>
+
+  <p id = "home">Welcome! uCreate is a schedule builder affiliated with the University of Maryland that will transfer
+your desired schedule(s) to Testudo and register you for those selected couses on your
+appointment date. You may register for courses with our Primary Schedule builder or create up to three alternate schedules.
+Please log in with your Directory ID and password.</p>
+
+<!-- Log In -->
+
+<div>
+
+    <label for="directoryId">Directory ID</label> <br>
+    <input type="text" id="directoryId" name="directoryId" required>
+    <br><br>
+
+
+    <label for="directoryPassword"> Password </label><br>
+    <input type="password" id="directoryPassword" name="directoryPassword" required>
+
+    <br>
+
+    <label>
+        <input type="checkbox" name="remember" style = "font-size: 60%;"> Remember Login
+      </label> <br><br><br>
+    <form action="home.html">
+    <p id = "submit"><input type="submit" value="Log In" style = "font-family: Helvetica, sans-serif; font-size: 90%;"><br></p>
+
+  </form>
+</div>
+  <br><br>  <br><br>  <br>
+<img src="http://assets.gradreports.com/assets/school_logos/u_of_maryland_c_park.png" alt="UMDlogo">
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+
+    <style>
+
+      header {
+          background-color: #B10D00;
+          padding-top: 30px;
+          margin: -10px;
+          padding-bottom: 20px;
+      }
+
+      #title {
+          background-color: #B10D00;
+          color: white;
+          padding-left: 30px;
+          font-size: 30px;
+          font-family: Helvetica, sans-serif;
+          display: inline-block;
+          margin: 0;
+      }
+
+      img {
+        padding-left: 20px;
+      }
+
+      .contact {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .schedules {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .home {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .testudo {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .log_out {
+        align: right;
+        border: none;
+        background-color: #B10D00;
+        padding: 14px 28px;
+        font-family: Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        float: right;
+      }
+
+
+      .home:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .contact:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .schedules:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .log_out:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      a:link {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      #umd {
+        width: 15%;
+        position: absolute;
+      }
+
+      #reg_date {
+        font-size: 150%;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+        padding-top: 10px;
+      }
+
+      #date {
+        font-size: 170%;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+      }
+
+      #blocks {
+        font-size: 120%;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+      }
+
+      .primary {
+        background-color: white;
+        border: #C6C2C2;
+        border-style: solid;
+        border-width: 2px;
+        color: #808080;
+        padding-top: 10px;
+        padding-right: 35px;
+        padding-bottom: 10px;
+        text-align: justify;
+        font-size: 16px;
+        font-family: Helvetica, sans-serif;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 500px;
+        height: auto;
+      }
+
+      .primary:hover {
+          box-shadow: 7px 9px #C6C2C2;
+          background-color: #5899E0;
+          color: white;
+      }
+
+      #primary {
+        text-align: center;
+      }
+
+      .alternatives {
+        background-color: white;
+        border: #C6C2C2;
+        border-style: solid;
+        border-width: 2px;
+        color: #808080;
+        padding-top: 10px;
+        padding-right: 35px;
+        padding-bottom: 10px;
+        text-align: justify;
+        font-size: 16px;
+        font-family: Helvetica, sans-serif;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 500px;
+        height: auto;
+      }
+
+      .alternatives:hover {
+          box-shadow: 7px 9px #C6C2C2;
+          background-color: #5899E0;
+          color: white;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <header>
+        <p id = "title"><a href = "home.html">uCREATE</a></p>
+        <button class="log_out"><a href = "login.html">Log Out</a></button>
+        <button class="contact"><a href="mailto:ucreate@support.com">Contact Us</a></button>
+        <button class="schedules">Your Schedules</button>
+        <button class="testudo"><a href="http://www.testudo.umd.edu/">Testudo</a></button>
+        <button class="home"><a href = "home.html">Home</a></button>
+        <img src="gradient.svg" alt="gradient" width = "100%">
+    </header>
+
+    <p id = "reg_date"><br>Your Registration Date for <b>Spring 2019</b> is:</p>
+
+    <h3 id = "date">Thursday November 1, 2018 at 3:45 PM</h3>
+
+    <p id = "blocks">You have (0) blocks.</p><br>
+
+    <form action="schedule.html">
+    <p id = "primary"><button class = "primary"><img src="primary.svg" style = "padding-top: 12px; float: left; width: 80px; height: 80px;"> <p style = "padding-left: 120px;">
+      <b>Create a primary schedule</b><br><br> The courses selected in your primary schedule will be prioritized
+      when your registration date arrives.</p></button></p>
+    </form>
+    <form action = "alternate.html">
+    <p id = "primary"><button class = "alternatives"><img src="alternatives.svg" style = "padding-top: 12px; float: left; width: 80px; height: 80px;"> <p style = "padding-left: 120px;">
+        <b>Create an alternative schedule</b><br><br>If courses in your primary schedule have no availability,
+        you can create up to 3 alternative schedules.</p></button></p>
+    </form>
+
+
+
+
+
+
+
+
+    <br><br>  <br><br>  <br>
+  <img id = "umd" src="http://assets.gradreports.com/assets/school_logos/u_of_maryland_c_park.png" alt="UMDlogo">
+
+  </body>
+</html>
